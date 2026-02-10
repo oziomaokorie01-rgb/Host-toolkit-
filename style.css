@@ -1,0 +1,276 @@
+body {
+      margin: 0;
+        padding: 0;
+          background-color: #1a0a2e; /* Deep Purple */
+            font-family: "Times New Roman", Times, serif;
+              height: 100vh;
+                display: flex;
+                  justify-content: center;
+                    align-items: center;
+                      overflow: hidden;
+                        position: relative;
+                        }
+
+                        /* THE GLOWING GRID */
+                        body::before, body::after {
+                          content: "";
+                            position: absolute;
+                              top: -50%; left: -50%;
+                                width: 200%; height: 200%;
+                                  background-size: 120px 120px; /* Big diamonds */
+                                    background-image: 
+                                        linear-gradient(60deg, rgba(212, 175, 55, 0.4) 2px, transparent 2px),
+                                            linear-gradient(-60deg, rgba(212, 175, 55, 0.4) 2px, transparent 2px);
+                                              filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.6));
+                                                animation: weave 25s linear infinite;
+                                                  z-index: 1;
+                                                  }
+
+                                                  body::after { animation-direction: reverse; opacity: 0.5; }
+
+                                                  @keyframes weave {
+                                                    from { transform: translate(0, 0); }
+                                                      to { transform: translate(120px, 120px); }
+                                                      }
+
+                                                      /* CONTAINER */
+                                                      .main-container {
+                                                        position: relative;
+                                                          z-index: 10;
+                                                            text-align: center;
+                                                              width: 90%;
+                                                              }
+
+                                                              /* The Brand Logo Style */
+                                                               .brand-name {
+                                                                 color: #D4AF37; /* Gold */
+                                                                   font-size: 3.5rem; /* Large and bold */
+                                                                     letter-spacing: 12px; /* This gives it the 'Luxury' look */
+                                                                       margin-bottom: 0;
+                                                                         text-transform: uppercase;
+                                                                           font-weight: 700;
+                                                                             text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+                                                                             }
+
+                                                                             /* The Smaller Toolkit Text */
+                                                                             .toolkit-title {
+                                                                               color: #FFF9EB; /* Champagne white */
+                                                                                 font-size: 1rem;
+                                                                                   letter-spacing: 4px;
+                                                                                     text-transform: uppercase;
+                                                                                       margin-top: 10px;
+                                                                                         margin-bottom: 50px;
+                                                                                           opacity: 0.8;
+                                                                                           }
+
+                                                                        .button-group {
+                                                                          display: flex;
+                                                                            flex-direction: column;
+                                                                              align-items: center;
+                                                                                gap: 20px;
+                                                                                }
+
+                                                                                /* PRIMARY BUTTON */
+                                                                                .primary-btn {
+                                                                                  width: 280px;
+                                                                                    padding: 15px;
+                                                                                      background: transparent;
+                                                                                        color: #D4AF37;
+                                                                                          border: 2px solid #D4AF37;
+                                                                                            font-family: "Times New Roman", serif;
+                                                                                              font-weight: bold;
+                                                                                                text-transform: uppercase;
+                                                                                                  cursor: pointer;
+                                                                                                  }
+
+                                                                                                  /* THE DASHBOARD LINK (Fixing the black text) */
+                                                                                                  .secondary-link {
+                                                                                                    color: #FFF9EB !important; /* Forces Champagne White */
+                                                                                                      font-size: 1rem;
+                                                                                                        margin-top: 10px;
+                                                                                                        }
+
+                                                                                                        .secondary-link span {
+                                                                                                          color: #D4AF37;
+                                                                                                            text-decoration: underline;
+                                                                                                              cursor: pointer;
+                                                                                                                font-weight: bold;
+}/* Styling for the Signup Form Panel */
+.glass-panel {
+    background: rgba(26, 10, 46, 0.6); /* Translucent purple */
+        padding: 30px;
+            border: 1px solid rgba(212, 175, 55, 0.3); /* Thin gold border */
+                border-radius: 4px;
+                    backdrop-filter: blur(10px); /* Blurs the moving grid behind the box */
+                        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+                            margin-bottom: 20px;
+                            }
+
+                            .input-group {
+                                text-align: left;
+                                    margin-bottom: 25px;
+                                    }
+
+                                    .input-group label {
+                                        display: block;
+                                            color: #D4AF37;
+                                                font-size: 0.8rem;
+                                                    letter-spacing: 2px;
+                                                        margin-bottom: 8px;
+                                                        }
+
+                                                        .input-group input {
+                                                            width: 100%;
+                                                                background: rgba(255, 255, 255, 0.05);
+                                                                    border: none;
+                                                                        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+                                                                            padding: 10px 0;
+                                                                                color: #FFF9EB;
+                                                                                    font-family: "Times New Roman", serif;
+                                                                                        font-size: 1.1rem;
+                                                                                            outline: none;
+                                                                                                transition: 0.3s;
+                                                                                                }
+
+                                                                                                .input-group input:focus {
+                                                                                                    border-bottom: 1px solid #D4AF37;
+                                                                                                        background: rgba(212, 175, 55, 0.05);
+                                                                                                        }
+
+                                                                                                        #status {
+                                                                                                            margin-top: 15px;
+                                                                                                                color: #D4AF37;
+                                                                                                                    font-style: italic;
+                                                                                                                        min-height: 1.2rem;
+                                                                                                                        }
+                        #success-flash {
+                              position: fixed;
+                                  top: 0;
+                                      left: 0;
+                                          width: 100vw;
+                                              height: 100vh;
+                                                  background: radial-gradient(circle, #D4AF37 0%, transparent 70%);
+                                                      opacity: 0;
+                                                          z-index: 100;
+                                                              pointer-events: none; /* Allows clicking through it */
+                                                                  transition: opacity 0.3s ease;
+                                                                  }
+
+                                                                  /* This class will be added by JavaScript */
+                                                                  .flash-active {
+                                                                      animation: gold-burst 1.5s ease-out forwards;
+                                                                      }
+
+                                                                      @keyframes gold-burst {
+                                                                          0% { opacity: 0; transform: scale(0.5); }
+                                                                              30% { opacity: 1; transform: scale(1.2); }
+                                                                                  100% { opacity: 0; transform: scale(1.5); }
+                                                                      }                                                                                /* --- ZEIROKO MISSION CONTROL STYLING --- */
+                                                                      :root {
+                                                                          --gold: #D4AF37;
+                                                                              --dark-bg: #0a0a0b;
+                                                                                  --panel-bg: #161618;
+                                                                                      --text-dim: #a0a0a0;
+                                                                                          --glow: rgba(212, 175, 55, 0.3);
+                                                                                          }
+
+                                                                                          body.dashboard-body {
+                                                                                              background-color: var(--dark-bg);
+                                                                                                  color: #ffffff;
+                                                                                                      font-family: 'Inter', sans-serif;
+                                                                                                          margin: 0;
+                                                                                                              padding: 20px;
+                                                                                                              }
+
+                                                                                                              /* Brand Header */
+                                                                                                              .brand-name {
+                                                                                                                  font-size: 2.5rem;
+                                                                                                                      color: var(--gold);
+                                                                                                                          text-align: center;
+                                                                                                                              letter-spacing: 8px;
+                                                                                                                                  text-shadow: 0 0 15px var(--glow);
+                                                                                                                                      margin-bottom: 30px;
+                                                                                                                                      }
+
+                                                                                                                                      /* Dashboard Grid */
+                                                                                                                                      .control-grid {
+                                                                                                                                          display: grid;
+                                                                                                                                              grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                                                                                                                                                  gap: 20px;
+                                                                                                                                                      max-width: 1200px;
+                                                                                                                                                          margin: 0 auto;
+                                                                                                                                                          }
+
+                                                                                                                                                          .control-panel {
+                                                                                                                                                              background: var(--panel-bg);
+                                                                                                                                                                  border: 1px solid rgba(255, 255, 255, 0.05);
+                                                                                                                                                                      border-radius: 12px;
+                                                                                                                                                                          padding: 20px;
+                                                                                                                                                                              box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                                                                                                                                                                              }
+
+                                                                                                                                                                              /* Session Flow Steps */
+                                                                                                                                                                              .step {
+                                                                                                                                                                                  padding: 15px;
+                                                                                                                                                                                      margin-bottom: 10px;
+                                                                                                                                                                                          border-radius: 8px;
+                                                                                                                                                                                              background: rgba(255,255,255,0.02);
+                                                                                                                                                                                                  color: var(--text-dim);
+                                                                                                                                                                                                      transition: all 0.4s ease;
+                                                                                                                                                                                                          border-left: 4px solid transparent;
+                                                                                                                                                                                                          }
+
+                                                                                                                                                                                                          .step.active {
+                                                                                                                                                                                                              color: #fff;
+                                                                                                                                                                                                                  background: rgba(212, 175, 55, 0.1);
+                                                                                                                                                                                                                      border-left: 4px solid var(--gold);
+                                                                                                                                                                                                                          box-shadow: inset 0 0 15px var(--glow);
+                                                                                                                                                                                                                              transform: translateX(5px);
+                                                                                                                                                                                                                              }
+
+                                                                                                                                                                                                                              /* Big Timer */
+                                                                                                                                                                                                                              .big-timer {
+                                                                                                                                                                                                                                  font-family: 'Courier New', monospace;
+                                                                                                                                                                                                                                      font-size: 3.5rem;
+                                                                                                                                                                                                                                          text-align: center;
+                                                                                                                                                                                                                                              color: var(--gold);
+                                                                                                                                                                                                                                                  margin: 20px 0;
+                                                                                                                                                                                                                                                      font-weight: bold;
+                                                                                                                                                                                                                                                      }
+
+                                                                                                                                                                                                                                                      /* Space Mode Buttons */
+                                                                                                                                                                                                                                                      .btn-grid {
+                                                                                                                                                                                                                                                          display: grid;
+                                                                                                                                                                                                                                                              grid-template-columns: 1fr 1fr;
+                                                                                                                                                                                                                                                                  gap: 15px;
+                                                                                                                                                                                                                                                                  }
+
+                                                                                                                                                                                                                                                                  .dash-btn {
+                                                                                                                                                                                                                                                                      background: transparent;
+                                                                                                                                                                                                                                                                          border: 1px solid var(--gold);
+                                                                                                                                                                                                                                                                              color: var(--gold);
+                                                                                                                                                                                                                                                                                  padding: 15px;
+                                                                                                                                                                                                                                                                                      border-radius: 8px;
+                                                                                                                                                                                                                                                                                          cursor: pointer;
+                                                                                                                                                                                                                                                                                              font-weight: bold;
+                                                                                                                                                                                                                                                                                                  transition: 0.3s;
+                                                                                                                                                                                                                                                                                                  }
+
+                                                                                                                                                                                                                                                                                                  .dash-btn:hover {
+                                                                                                                                                                                                                                                                                                      background: var(--gold);
+                                                                                                                                                                                                                                                                                                          color: #000;
+                                                                                                                                                                                                                                                                                                              box-shadow: 0 0 20px var(--glow);
+                                                                                                                                                                                                                                                                                                              }
+
+                                                                                                                                                                                                                                                                                                              /* AI Output Box */
+                                                                                                                                                                                                                                                                                                              .ai-suggestion-box {
+                                                                                                                                                                                                                                                                                                                  margin-top: 15px;
+                                                                                                                                                                                                                                                                                                                      padding: 15px;
+                                                                                                                                                                                                                                                                                                                          background: rgba(0,0,0,0.3);
+                                                                                                                                                                                                                                                                                                                              border-radius: 8px;
+                                                                                                                                                                                                                                                                                                                                  max-height: 200px;
+                                                                                                                                                                                                                                                                                                                                      overflow-y: auto;
+                                                                                                                                                                                                                                                                                                                                          font-size: 0.9rem;
+                                                                                                                                                                                                                                                                                                                                              line-height: 1.6;
+                                                                                                                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                                                                                                                                                                           
